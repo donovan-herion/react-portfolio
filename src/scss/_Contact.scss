@@ -1,0 +1,48 @@
+.contact {
+  background-color: $primary-color;
+  width: 110%;
+  top: 40px;
+  margin: 15vh -5% -5vh;
+
+  transform: rotate(-3deg);
+  z-index: -1;
+  color: $white-color;
+  .container {
+    padding: 6rem 0 8rem;
+    transform: rotate(3deg);
+    height: 100%;
+    margin-left: -0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      padding: 2rem 0;
+      font-size: 2rem;
+    }
+    a {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .contact {
+    .container {
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+        padding: 2rem 0;
+        font-size: 1.4rem;
+      }
+      a {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

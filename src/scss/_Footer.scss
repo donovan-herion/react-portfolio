@@ -1,0 +1,49 @@
+footer {
+  position: relative;
+  background-color: $dark-grey;
+  color: $white-color;
+  padding: 4rem 0;
+  z-index: 1;
+
+  .container {
+    margin: 0 auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .back-to-top {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+    .links {
+      font-size: 3rem;
+      width: 400px;
+      margin: 30px 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    hr {
+      align-self: stretch;
+
+      border-color: $light-grey;
+    }
+    p {
+      margin: 1rem 0;
+      color: $light-grey;
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  footer {
+    .container {
+      width: 250px;
+      .links {
+        width: 250px;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.landing {
+  font-size: 2.7rem;
+  height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto;
+  .container {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15vw;
+
+    h1 {
+      line-height: 1.2;
+      color: $dark-grey;
+      .name {
+        color: $primary-color;
+      }
+      .second-line {
+        display: block;
+      }
+    }
+    .react-reveal {
+      margin-top: 2rem;
+      a {
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .landing {
+    font-size: 1.8rem;
+    height: 100vh;
+    padding: 0 5%;
+    .container {
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0;
+
+      h1 {
+        line-height: 1.4;
+        color: $dark-grey;
+        .name {
+          color: $primary-color;
+        }
+        .second-line {
+          display: block;
+        }
+      }
+      .react-reveal {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .landing {
+    font-size: 1.4rem;
+    .container {
+      height: 80vh;
+    }
+  }
+}

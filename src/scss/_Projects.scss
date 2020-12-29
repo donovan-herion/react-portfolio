@@ -1,0 +1,63 @@
+.projects {
+  padding: 5rem 15vw;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  .left {
+    color: $dark-grey;
+    min-width: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      padding: 2rem 0;
+      // flex-grow: 1;
+      line-height: 1.5;
+    }
+    .buttons {
+      .no-border-button {
+        cursor: pointer;
+        width: fit-content;
+        color: $primary-color;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+  .right {
+    width: 60%;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .projects {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    .left {
+      min-width: 0;
+      text-align: center;
+      width: 100%;
+
+      .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .right {
+      margin-top: 3rem;
+      width: 100%;
+    }
+  }
+}
