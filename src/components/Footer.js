@@ -9,11 +9,6 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function Footer() {
-  const scrollToTop = () => {
-    console.log("clicked");
-    scroll.scrollToTop();
-    console.log("clicked after");
-  };
   return (
     <footer>
       <div className="container">
