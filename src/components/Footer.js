@@ -6,13 +6,21 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Footer() {
+  const scrollToTop = () => {
+    console.log("clicked");
+    scroll.scrollToTop();
+    console.log("clicked after");
+  };
   return (
     <footer>
       <div className="container">
         <div className="back-to-top">
-          <FontAwesomeIcon icon={faChevronUp} />
+          <Link activeClass="active" to="landing" smooth={true} duration={1500}>
+            <FontAwesomeIcon icon={faChevronUp} />
+          </Link>
         </div>
         <div className="links">
           <FontAwesomeIcon icon={faTwitter} className="link" />
