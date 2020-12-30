@@ -71,3 +71,9 @@
     }
   }
 }
+
+@media (orientation: landscape) {
+  .landing {
+    min-height: 300px;
+  }
+}
