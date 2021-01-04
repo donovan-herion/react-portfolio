@@ -21,7 +21,7 @@ function Project({ backgroundURL, title, text, demoURL, sourceURL }) {
       <Fade right>
         <div className="right">
           <div className="backgroundvideocontainer">
-            <video autoPlay muted loop className="video">
+            <video autoPlay muted loop playsinline className="video">
               <source src={video} type="video/mp4" />
               votre browser ne supporte pas la video
             </video>
