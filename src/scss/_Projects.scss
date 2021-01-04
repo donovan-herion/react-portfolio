@@ -36,6 +36,24 @@
     width: 60%;
   }
 }
+.btn-more-github {
+  outline: none;
+  display: block;
+  padding: 10px 40px;
+  background-color: transparent;
+  border: solid 2px $primary-color;
+  border-radius: 50px;
+  margin: 100px auto 200px;
+  color: $primary-color;
+  font-size: 1.5rem;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  &:hover {
+    color: white;
+    background-color: $primary-color;
+    cursor: pointer;
+  }
+}
 
 @media (max-width: $bp-mobile) {
   .projects {

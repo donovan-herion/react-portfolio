@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./Button";
-import video from "../video/Category.mp4";
+// import video from "../video/Category.mp4";
 import Fade from "react-reveal/Fade";
-function Project({ backgroundURL, title, text, demoURL, sourceURL }) {
+function Project({ title, text, demoURL, sourceURL, video }) {
   return (
     <div className="projects">
       <Fade left>

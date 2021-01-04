@@ -1,14 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useHistory } from "react-router-dom";
 import {
+  faDiscord,
   faGithub,
   faLinkedin,
-  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function Footer() {
+  let history = useHistory();
   return (
     <footer>
       <div className="container">
@@ -18,9 +20,27 @@ function Footer() {
           </Link>
         </div>
         <div className="links">
-          <FontAwesomeIcon icon={faTwitter} className="link" />
-          <FontAwesomeIcon icon={faLinkedin} className="link" />
-          <FontAwesomeIcon icon={faGithub} className="link" />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="link"
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/donovan-h%C3%A9rion/", "_blank")
+            }
+          />
+          <FontAwesomeIcon
+            icon={faGithub}
+            className="link"
+            onClick={() =>
+              window.open("https://github.com/donovan-herion", "_blank")
+            }
+          />
+            <FontAwesomeIcon
+              icon={faDiscord}
+              className="link"
+              onClick={() =>
+                window.open("https://discordapp.com/users/donovan#9964", "_blank")
+              }
+            />
         </div>
         <hr />
         <p>{`${new Date().getFullYear()} All rights reserved`}</p>

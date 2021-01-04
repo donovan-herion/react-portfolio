@@ -4,8 +4,14 @@ import Project from "./Project";
 import amaclone from "../images/amaclone.png";
 import jbrite from "../images/jbrite.png";
 import woodWars from "../images/wood-wars.png";
-import clockingMachine from "../images/clocking-machine.png";
-import devRestaurant from "../images/dev-restaurant.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Wobble from "react-reveal/Wobble";
+import amacloneVideo from "../video/amaclone.mp4";
+import jbriteVideo from "../video/jbrite.mp4";
+import devRestoVideo from "../video/devResto.mp4";
+
+
 
 function Projects() {
   return (
@@ -15,49 +21,41 @@ function Projects() {
       <Project
         title={"Amazon Clone"}
         text={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
+          "Site E-commerce complètement fonctionnel comprenant un système d'authentification et de paiement. Adapté à tous les écrans."
         }
-        demoURL={"https://donovan-herion.netlify.app/"}
-        sourceURL={"https://donovan-herion.netlify.app/"}
-        backgroundURL={amaclone}
+        demoURL={"https://amaclone-673b4.web.app/"}
+        sourceURL={"https://github.com/donovan-herion/amazon-clone"}
+        video={amacloneVideo}
       />
       <Project
         title={"Jepsen Brite"}
         text={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
+          "Site de gestion d'évènements pourvu d'un système d'authentification et de création d'évènements par la communauté. Adapté à tous les écrans."
         }
-        demoURL={"https://donovan-herion.netlify.app/"}
-        sourceURL={"https://donovan-herion.netlify.app/"}
-        backgroundURL={jbrite}
+        demoURL={"https://j-brite.herokuapp.com/"}
+        sourceURL={"https://github.com/donovan-herion/jepsen-brite"}
+        video={jbriteVideo}
       />
-      <Project
-        title={"Wood Wars"}
-        text={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
-        }
-        demoURL={"https://donovan-herion.netlify.app/"}
-        sourceURL={"https://donovan-herion.netlify.app/"}
-        backgroundURL={woodWars}
-      />
-      <Project
-        title={"Clocking Machine"}
-        text={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
-        }
-        demoURL={"https://donovan-herion.netlify.app/"}
-        sourceURL={"https://donovan-herion.netlify.app/"}
-        backgroundURL={clockingMachine}
-      />
-
       <Project
         title={"Dev Restaurant"}
         text={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
+          "Site vitrine d'un restaurant. Entièrement personnalisable par l'utilisateur final. Possibilité de création et publications de recettes. Adapté à tous les écrans."
         }
-        demoURL={"https://donovan-herion.netlify.app/"}
-        sourceURL={"https://donovan-herion.netlify.app/"}
-        backgroundURL={devRestaurant}
+        demoURL={"http://dev-restaurant.unaux.com/"}
+        sourceURL={"https://github.com/donovan-herion/dev-restaurant"}
+        video={devRestoVideo}
       />
+
+      <Wobble delay={300}>
+        <button
+          className="btn-more-github"
+          onClick={() =>
+            window.open("https://github.com/donovan-herion", "_blank")
+          }
+        >
+          <FontAwesomeIcon icon={faGithub} /> Voir plus sur Github
+        </button>
+      </Wobble>
     </>
   );
 }
