@@ -54,8 +54,8 @@ function Projects() {
         text={
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate iusto eligendi aliquam fugit laborum, fuga ad tempora explicabo exercitationem eveniet! Eius libero quae ab repellendus!"
         }
-        demoURL={"https://gatsby-simplefolio.netlify.app/"}
-        sourceURL={"https://gatsby-simplefolio.netlify.app/"}
+        demoURL={"https://donovan-herion.netlify.app/"}
+        sourceURL={"https://donovan-herion.netlify.app/"}
         backgroundURL={devRestaurant}
       />
     </>

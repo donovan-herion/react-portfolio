@@ -13,7 +13,7 @@ function Contact() {
           <p>Envie de collaborer ? Parfait !</p>
           <Link to="/contact" style={{textDecoration: "none"}}>
           <Flip top delay={1000}>
-            <Button text={"Parlons-en"} color={"primary"} />
+            <Button url={"/contact"} text={"Parlons-en"} color={"primary"} />
           </Flip>
           </Link>
         </Flip>
