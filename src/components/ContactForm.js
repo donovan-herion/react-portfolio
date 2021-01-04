@@ -8,46 +8,35 @@ function ContactForm() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const [submitText, setSubmitText] = useState(null);
+
   const onSubmit = async (event, setSubmitText) => {
     event.preventDefault();
-    setSubmitText("Submitting ...");
+    setSubmitText("Envoi ...");
     const formElements = [...event.currentTarget.elements];
-    // const isValid =
-    //   formElements.filter((elem) => elem.name === "name")[0].value === "";
-  
-    // const validFormElements = isValid ? formElements : [];
-  
-    // if (validFormElements.length < 1) {
-    //   // or some other cheeky error message
-    //   setSubmitText("It looks like you filled out too many fields!");
-    // } else {
-      const filledOutElements = formElements
-        .filter((elem) => !!elem.value)
-        .map(
-          (element) =>
-            encodeURIComponent(element.name) +
-            "=" +
-            encodeURIComponent(element.value)
-        )
-        .join("&");
+    const filledOutElements = formElements
+      .filter((elem) => !!elem.value)
+      .map(
+        (element) =>
+          encodeURIComponent(element.name) +
+          "=" +
+          encodeURIComponent(element.value)
+      )
+      .join("&");
 
-  
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: filledOutElements,
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: filledOutElements,
+    })
+      .then(() => {
+        setSubmitText("Parfait !");
       })
-        .then(() => {
-          setSubmitText("Envoye avec succes");
-        })
-        .catch((_) => {
-          setSubmitText(
-            "Une erreur est survenue"
-          );
-        });
-    }
+      .catch((_) => {
+        setSubmitText("Une erreur est survenue");
+      });
+  };
 
   return (
     <div className="contact-form">
@@ -64,13 +53,14 @@ function ContactForm() {
             <p dangerouslySetInnerHTML={{ __html: "< / >" }} />
           </div>
           <h2 className="contact-form-title">
-            Bienvenue sur ma page de contact. Comment puis-je vous aider ?
+          {submitText ? "Merci pour votre message. Je vous recontacterai au plus vite." : "Bienvenue sur ma page de contact. Comment puis-je vous aider ?"}
+            
           </h2>
           <form
             method="POST"
             name="contact"
             className="contact-form-form"
-            onSubmit={e => onSubmit(e, setSubmitText)}
+            onSubmit={(e) => onSubmit(e, setSubmitText)}
           >
             <input type="hidden" name="form-name" value="contact" />
             <div className="name-email">
@@ -88,7 +78,7 @@ function ContactForm() {
               <textarea name="message"></textarea>
             </div>
             <button className="btn" type="submit">
-              C'est parti ! {submitText}
+              {submitText ? submitText : "C'est parti !"}
             </button>
           </form>
         </div>
