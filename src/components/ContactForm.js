@@ -29,7 +29,6 @@ function ContactForm() {
           );
         });
     }
-  };
 
   const [submitText, setSubmitText] = useState(null);
   return (
