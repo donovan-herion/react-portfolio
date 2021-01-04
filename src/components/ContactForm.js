@@ -22,7 +22,7 @@ function ContactForm() {
 
       <div className="centered-image"><p dangerouslySetInnerHTML={{__html: "< / >"}}  /></div>
       <h2 className="contact-form-title">Bienvenue sur ma page de contact. Comment puis-je vous aider ?</h2>
-      <form netlify name="contact" className="contact-form-form">
+      <form data-netlify="true" method="POST" name="contact" className="contact-form-form">
           <div className="name-email">
 
         <div className="name">
