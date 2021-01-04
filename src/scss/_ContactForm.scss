@@ -1,0 +1,173 @@
+.contact-form {
+    overflow: hidden;
+    
+    .top {
+        height: 150px;
+        border-bottom: 1px solid #E6ECF8;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 100px;
+        svg {
+            transition-property: all;
+            transition-duration: 1s;
+            &:hover {
+                transform: rotateZ(360deg);
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .centered-image {
+        margin: -50px auto 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        color: $dark-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white-color;
+        font-size: 1.8rem;
+        font-weight: 900;
+    }
+    
+    .contact-form-title {
+        max-width: 1000px;
+        margin: 75px auto;
+        text-align: center;   
+        font-size: 3rem; 
+        font-weight: 400;
+        color: $dark-grey;
+    }
+    
+    .contact-form-form {
+        // background-color: blue;
+        margin: 0 auto 100px;
+        max-width: 750px;
+        
+        label {
+            display: block;
+            padding-bottom  : 10px;
+            color: $dark-grey;
+            font-weight: 300;
+        }
+        .name-email {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            .name, .email {
+                flex-grow: 1;
+                input {
+                    
+                    height: 50px;
+                    width: 100%;
+                    border: dotted 1px $dark-grey;
+                    border-radius: 10px;
+                    outline: none;
+                    padding: 20px;
+                    color: $dark-grey;
+
+
+                }
+            }
+            .email {
+                margin-left: 40px;
+            }
+        }
+        
+        
+        .message {
+            textarea {
+                width: 100%;
+                height: 200px;
+                border: dotted 1px $dark-grey;
+                border-radius: 10px;
+                outline: none;
+                padding: 20px;
+                color: $dark-grey;
+                resize: none;
+                line-height: 2;
+
+                
+            }
+        }
+        .btn {
+            outline: none;
+            display: block;
+            padding: 10px 40px;
+            background-color: transparent;
+            border: solid 2px $primary-color;
+            border-radius: 50px;
+            margin: 50px auto;
+            color: $primary-color;
+            font-size: 1.5rem;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            &:hover {
+                color: white;
+                background-color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+.top {
+    padding-right: 40px !important;
+}
+.contact-form-title {
+    font-size: 2rem !important;
+    padding:  0 10%;
+}
+
+    .contact-form-form {
+       
+        margin: 0 10% !important;
+        
+      
+        .name-email {
+            flex-direction: column;
+            .email {
+                margin: 30px 0 0 0 !important;
+            }
+        }
+        
+        
+        .message {
+            textarea {
+                width: 100%;
+                height: 200px;
+                border: dotted 1px $dark-grey;
+                border-radius: 10px;
+                outline: none;
+                padding: 20px;
+                color: $dark-grey;
+                resize: none;
+                line-height: 2;
+
+                
+            }
+        }
+        .btn {
+            outline: none;
+            display: block;
+            padding: 10px 40px;
+            background-color: transparent;
+            border: solid 2px $primary-color;
+            border-radius: 50px;
+            margin: 50px auto;
+            color: $primary-color;
+            font-size: 1.5rem;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            &:hover {
+                color: white;
+                background-color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}

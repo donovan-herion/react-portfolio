@@ -3,16 +3,29 @@ import Footer from "./Footer";
 import Landing from "./Landing";
 import Projects from "./Projects";
 import About from "./About";
+import ContactForm from "./ContactForm";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Landing />
-      {/* <About /> */}
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+
+      <Switch>
+        <Route path="/contact">
+          <ContactForm/>
+        </Route>
+        <Route path="/">
+          <Landing />
+          <Projects />
+          <Contact />
+          <Footer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
