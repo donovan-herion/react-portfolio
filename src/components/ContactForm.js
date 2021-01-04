@@ -74,16 +74,16 @@ function ContactForm() {
             <div className="name-email">
               <div className="name">
                 <label htmlFor="name">Nom :</label>
-                <input type="text" name="name" />
+                <input required type="text" name="name" />
               </div>
               <div className="email">
                 <label htmlFor="email">Email :</label>
-                <input type="email" name="email" />
+                <input required type="email" name="email" />
               </div>
             </div>
             <div className="message">
               <label htmlFor="message">Message :</label>
-              <textarea name="message"></textarea>
+              <textarea required name="message"></textarea>
             </div>
             <button className="btn" type="submit">
               {submitText ? submitText : "C'est parti !"}
