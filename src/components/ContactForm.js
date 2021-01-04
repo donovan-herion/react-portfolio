@@ -13,29 +13,32 @@ function ContactForm() {
 
   const onSubmit = async (event, setSubmitText) => {
     event.preventDefault();
-    setSubmitText("Envoi ...");
-    const formElements = [...event.currentTarget.elements];
-    const filledOutElements = formElements
-      .filter((elem) => !!elem.value)
-      .map(
-        (element) =>
-          encodeURIComponent(element.name) +
-          "=" +
-          encodeURIComponent(element.value)
-      )
-      .join("&");
+    if (!submitText) {
+      setSubmitText("Envoi ...");
+      const formElements = [...event.currentTarget.elements];
+      const filledOutElements = formElements
+        .filter((elem) => !!elem.value)
+        .map(
+          (element) =>
+            encodeURIComponent(element.name) +
+            "=" +
+            encodeURIComponent(element.value)
+        )
+        .join("&");
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: filledOutElements,
-    })
-      .then(() => {
-        setSubmitText("Parfait !");
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: filledOutElements,
       })
-      .catch((_) => {
-        setSubmitText("Une erreur est survenue");
-      });
+        .then(() => {
+          setSubmitText("Parfait !");
+          window.scrollTo(0, 0);
+        })
+        .catch((_) => {
+          setSubmitText("Une erreur est survenue");
+        });
+    }
   };
 
   return (
@@ -53,8 +56,9 @@ function ContactForm() {
             <p dangerouslySetInnerHTML={{ __html: "< / >" }} />
           </div>
           <h2 className="contact-form-title">
-          {submitText ? "Merci pour votre message. Je vous recontacterai au plus vite." : "Bienvenue sur ma page de contact. Comment puis-je vous aider ?"}
-            
+            {submitText
+              ? "Merci pour votre message. Je vous recontacterai au plus vite."
+              : "Bienvenue sur ma page de contact. Comment puis-je vous aider ?"}
           </h2>
           <form
             method="POST"
