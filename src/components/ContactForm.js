@@ -15,7 +15,7 @@ function ContactForm() {
     const formElements = [...event.currentTarget.elements];
     
   
-      await fetch("/", {
+      await fetch("/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formElements,
