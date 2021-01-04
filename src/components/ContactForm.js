@@ -9,13 +9,13 @@ function ContactForm() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [success, setSuccess] = useState(false);
+  const onSubmit = async (event, setSubmitText) => {
+    event.preventDefault();
+      setSubmitText("Submitting ...");
+    debugger;
+  };
 
-  useEffect(() => {
-    if ( window.location.search.includes('success=true') ) {
-      setSuccess(true);
-    }
-  }, []);
+  const [submitText, setSubmitText] = useState(null);
   return (
     <div className="contact-form">
       <div>
@@ -31,16 +31,13 @@ function ContactForm() {
             <p dangerouslySetInnerHTML={{ __html: "< / >" }} />
           </div>
           <h2 className="contact-form-title">
-            Bienvenue sur ma page de contact. Comment puis-je vous aider ?
+           {submitText} Bienvenue sur ma page de contact. Comment puis-je vous aider ?
           </h2>
-          {success && (
-          <p style={{ color: "green" }}>Thanks for your message! </p>
-        )}
           <form
             method="POST"
             name="contact"
-            action="/contact/?success=true"
             className="contact-form-form"
+            onSubmit={e => onSubmit(e, setSubmitText)}
           >
             <input type="hidden" name="form-name" value="contact" />
             <div className="name-email">
