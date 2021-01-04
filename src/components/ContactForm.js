@@ -11,8 +11,24 @@ function ContactForm() {
 
   const onSubmit = async (event, setSubmitText) => {
     event.preventDefault();
-      setSubmitText("Submitting ...");
-    debugger;
+    setSubmitText("Submitting ...");
+    const formElements = [...event.currentTarget.elements];
+    
+  
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formElements,
+      })
+        .then(() => {
+          setSubmitText("Successfully submitted!");
+        })
+        .catch((_) => {
+          setSubmitText(
+            "There was an error with your submission, please email me using the address above."
+          );
+        });
+    }
   };
 
   const [submitText, setSubmitText] = useState(null);
