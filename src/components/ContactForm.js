@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -7,6 +7,14 @@ import Fade from "react-reveal/Fade";
 function ContactForm() {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if ( window.location.search.includes('success=true') ) {
+      setSuccess(true);
+    }
   }, []);
   return (
     <div className="contact-form">
@@ -25,9 +33,13 @@ function ContactForm() {
           <h2 className="contact-form-title">
             Bienvenue sur ma page de contact. Comment puis-je vous aider ?
           </h2>
+          {success && (
+          <p style={{ color: "green" }}>Thanks for your message! </p>
+        )}
           <form
             method="POST"
             name="contact"
+            action="/contact/?success=true"
             className="contact-form-form"
           >
             <input type="hidden" name="form-name" value="contact" />
