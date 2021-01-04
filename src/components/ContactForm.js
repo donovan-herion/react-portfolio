@@ -8,21 +8,22 @@ function ContactForm() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
+  const [submitText, setSubmitText] = useState(null);
   const onSubmit = async (event, setSubmitText) => {
     event.preventDefault();
     setSubmitText("Submitting ...");
     const formElements = [...event.currentTarget.elements];
-    const isValid =
-      formElements.filter((elem) => elem.name === "name")[0].value === "";
+    // const isValid =
+    //   formElements.filter((elem) => elem.name === "name")[0].value === "";
   
-    const validFormElements = isValid ? formElements : [];
+    // const validFormElements = isValid ? formElements : [];
   
-    if (validFormElements.length < 1) {
-      // or some other cheeky error message
-      setSubmitText("It looks like you filled out too many fields!");
-    } else {
-      const filledOutElements = validFormElements
+    // if (validFormElements.length < 1) {
+    //   // or some other cheeky error message
+    //   setSubmitText("It looks like you filled out too many fields!");
+    // } else {
+      const filledOutElements = formElements
         .filter((elem) => !!elem.value)
         .map(
           (element) =>
@@ -31,6 +32,7 @@ function ContactForm() {
             encodeURIComponent(element.value)
         )
         .join("&");
+
   
       await fetch("/", {
         method: "POST",
@@ -38,17 +40,15 @@ function ContactForm() {
         body: filledOutElements,
       })
         .then(() => {
-          setSubmitText("Successfully submitted!");
+          setSubmitText("Envoye avec succes");
         })
         .catch((_) => {
           setSubmitText(
-            "There was an error with your submission, please email me using the address above."
+            "Une erreur est survenue"
           );
         });
     }
-  };
 
-  const [submitText, setSubmitText] = useState(null);
   return (
     <div className="contact-form">
       <div>
