@@ -28,7 +28,6 @@ function ContactForm() {
           <form
             method="POST"
             name="contact"
-            action="/"
             className="contact-form-form"
           >
             <input type="hidden" name="form-name" value="contact" />
