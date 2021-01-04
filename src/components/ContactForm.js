@@ -47,7 +47,7 @@ function ContactForm() {
             <p dangerouslySetInnerHTML={{ __html: "< / >" }} />
           </div>
           <h2 className="contact-form-title">
-           {submitText} Bienvenue sur ma page de contact. Comment puis-je vous aider ?
+            Bienvenue sur ma page de contact. Comment puis-je vous aider ?
           </h2>
           <form
             method="POST"
@@ -71,7 +71,7 @@ function ContactForm() {
               <textarea name="message"></textarea>
             </div>
             <button className="btn" type="submit">
-              C'est parti !
+              C'est parti ! {submitText}
             </button>
           </form>
         </div>
