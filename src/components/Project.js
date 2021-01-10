@@ -12,7 +12,7 @@ function Project({ title, text, demoURL, sourceURL, video }) {
           <p>{text}</p>
           <div className="buttons">
             <Button url={demoURL} text={"DEMO"} color={"white"} />
-            <a href={sourceURL} className="no-border-button">
+            <a href={sourceURL} target="_blank" className="no-border-button">
               Code source
             </a>
           </div>

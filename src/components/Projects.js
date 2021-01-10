@@ -1,17 +1,12 @@
 import React from "react";
 import Banner from "./Banner";
 import Project from "./Project";
-import amaclone from "../images/amaclone.png";
-import jbrite from "../images/jbrite.png";
-import woodWars from "../images/wood-wars.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Wobble from "react-reveal/Wobble";
-import amacloneVideo from "../video/amaclone.mp4";
-import jbriteVideo from "../video/jbrite.mp4";
-import devRestoVideo from "../video/devResto.mp4";
-
-
+import amacloneVideo from "../video/amazon.mp4";
+import jbriteVideo from "../video/jepsen-brite.mp4";
+import devRestoVideo from "../video/dev-resto.mp4";
 
 function Projects() {
   return (
@@ -23,7 +18,7 @@ function Projects() {
         text={
           "Site E-commerce complètement fonctionnel comprenant un système d'authentification et de paiement. Adapté à tous les écrans."
         }
-        demoURL={"https://amaclone-673b4.web.app/"}
+        demoURL={"https://amaclone-8c301.web.app/"}
         sourceURL={"https://github.com/donovan-herion/amazon-clone"}
         video={amacloneVideo}
       />

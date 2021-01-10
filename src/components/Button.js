@@ -4,13 +4,13 @@ function Button({ url, text, color }) {
   {
     if (color == "primary") {
       return (
-        <a href={url} className="filled-button-primary">
+        <a href={url} target="_blank" className="filled-button-primary">
           {text}
         </a>
       );
     } else {
       return (
-        <a href={url} className="filled-button-white">
+        <a href={url} target="_blank" className="filled-button-white">
           {text}
         </a>
       );
