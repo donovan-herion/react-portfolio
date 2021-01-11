@@ -37,7 +37,12 @@
       }
       p {
         padding: 2rem 0;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        span {
+          text-align: center;
+          padding: 10px 0;
+          display: block;
+        }
       }
       a {
         font-weight: 600;

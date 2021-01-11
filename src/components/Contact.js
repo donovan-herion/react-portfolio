@@ -10,9 +10,10 @@ function Contact({ english }) {
         <Flip top cascade>
           <h2>CONTACT</h2>
           <p>
-            {english
-              ? "Willing to collaborate ? Perfect !"
-              : "Envie de collaborer ? Parfait !"}
+            {english ? "Willing to collaborate ? " : "Envie de collaborer ? "}
+            <span className="perfect">
+              {english ? "Perfect !" : "Parfait !"}
+            </span>
           </p>
           <Link to="/contact" style={{ textDecoration: "none" }}>
             <Flip top delay={1000}>
