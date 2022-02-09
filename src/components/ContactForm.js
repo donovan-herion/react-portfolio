@@ -9,6 +9,9 @@ function ContactForm({ english }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [textarea, setTextarea] = useState("");
   const [submitText, setSubmitText] = useState(null);
 
   const onSubmit = async (event, setSubmitText) => {
@@ -28,6 +31,9 @@ function ContactForm({ english }) {
       })
         .then(() => {
           setSubmitText("Parfait !");
+          setName("");
+          setEmail("");
+          setTextarea("");
           window.scrollTo({
             top: 0,
             left: 0,
@@ -37,6 +43,9 @@ function ContactForm({ english }) {
         .catch(error => {
           console.log(error);
           setSubmitText("error");
+          setName("");
+          setEmail("");
+          setTextarea("");
         });
     }
   };
@@ -63,16 +72,16 @@ function ContactForm({ english }) {
             <div className="name-email">
               <div className="name">
                 <label htmlFor="name">{english ? "Name :" : "Nom :"}</label>
-                <input required type="text" name="name" />
+                <input required type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
               </div>
               <div className="email">
                 <label htmlFor="email">Email :</label>
-                <input required type="email" name="email" />
+                <input required type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} />
               </div>
             </div>
             <div className="message">
               <label htmlFor="message">Message :</label>
-              <textarea required name="message"></textarea>
+              <textarea required name="message" value={textarea} onChange={e => setTextarea(e.target.value)}></textarea>
             </div>
             <button className="btn" type="submit">
               {submitText ? submitText : english ? "Let's do it !" : "C'est parti !"}
