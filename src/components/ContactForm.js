@@ -18,12 +18,7 @@ function ContactForm({ english }) {
       const formElements = [...event.currentTarget.elements];
       const filledOutElements = formElements
         .filter(elem => !!elem.value)
-        .map(
-          element =>
-            encodeURIComponent(element.name) +
-            "=" +
-            encodeURIComponent(element.value)
-        )
+        .map(element => encodeURIComponent(element.name) + "=" + encodeURIComponent(element.value))
         .join("&");
 
       await fetch("/", {
@@ -39,7 +34,8 @@ function ContactForm({ english }) {
             behavior: "smooth",
           });
         })
-        .catch(_ => {
+        .catch(error => {
+          console.log(error);
           setSubmitText("error");
         });
     }
@@ -60,20 +56,9 @@ function ContactForm({ english }) {
             <p dangerouslySetInnerHTML={{ __html: "< / >" }} />
           </div>
           <h2 className="contact-form-title">
-            {submitText
-              ? english
-                ? "Thank you for your message. I'll get in touch very soon."
-                : "Merci pour votre message. Je vous recontacterai au plus vite."
-              : english
-              ? "Welcome to my contact page. How can I help you ?"
-              : "Bienvenue sur ma page de contact. Comment puis-je vous aider ?"}
+            {submitText ? (english ? "Thank you for your message. I'll get in touch very soon." : "Merci pour votre message. Je vous recontacterai au plus vite.") : english ? "Welcome to my contact page. How can I help you ?" : "Bienvenue sur ma page de contact. Comment puis-je vous aider ?"}
           </h2>
-          <form
-            method="POST"
-            name="contact"
-            className="contact-form-form"
-            onSubmit={e => onSubmit(e, setSubmitText)}
-          >
+          <form method="POST" name="contact" className="contact-form-form" onSubmit={e => onSubmit(e, setSubmitText)}>
             <input type="hidden" name="form-name" value="contact" />
             <div className="name-email">
               <div className="name">
@@ -90,11 +75,7 @@ function ContactForm({ english }) {
               <textarea required name="message"></textarea>
             </div>
             <button className="btn" type="submit">
-              {submitText
-                ? submitText
-                : english
-                ? "Let's do it !"
-                : "C'est parti !"}
+              {submitText ? submitText : english ? "Let's do it !" : "C'est parti !"}
             </button>
           </form>
         </div>
