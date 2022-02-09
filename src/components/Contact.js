@@ -9,18 +9,13 @@ function Contact({ english }) {
       <div className="container">
         <Flip top cascade>
           <h2>CONTACT</h2>
-          <p>
+          <p className="mb-2">
             {english ? "Willing to collaborate ? " : "Envie de collaborer ? "}
-            <span className="perfect">
-              {english ? "Perfect !" : "Parfait !"}
-            </span>
+            <span className="perfect">{english ? "Perfect !" : "Parfait !"}</span>
           </p>
           <Link to="/contact" style={{ textDecoration: "none" }}>
             <Flip top delay={1000}>
-              <Button
-                text={english ? "Let's talk" : "Parlons-en"}
-                color={"primary"}
-              />
+              <Button text={english ? "Let's talk" : "Parlons-en"} color={"primary"} />
             </Flip>
           </Link>
         </Flip>

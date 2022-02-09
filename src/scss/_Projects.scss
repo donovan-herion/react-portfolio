@@ -36,23 +36,14 @@
     width: 60%;
   }
 }
-.btn-more-github {
-  outline: none;
+
+.mx-auto {
   display: block;
-  padding: 10px 40px;
-  background-color: transparent;
-  border: solid 2px $primary-color;
-  border-radius: 50px;
-  margin: 100px auto 200px;
-  color: $primary-color;
+  margin: 0 auto;
+  background: white;
   font-size: 1.5rem;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  &:hover {
-    color: white;
-    background-color: $primary-color;
-    cursor: pointer;
-  }
+  padding: 1rem;
+  margin-top: 3rem;
 }
 
 @media (max-width: $bp-mobile) {
@@ -77,5 +68,8 @@
       margin-top: 3rem;
       width: 100%;
     }
+  }
+  .mx-auto {
+    font-size: 1.2rem;
   }
 }
