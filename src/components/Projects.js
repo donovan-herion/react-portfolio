@@ -4,8 +4,8 @@ import Project from "./Project";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Wobble from "react-reveal/Wobble";
-import amazon from "../video/amazon.mp4";
-import airbnb from "../video/airbnb.mp4";
+import city2 from "../video/city2.mp4";
+import nocturne from "../video/nocturne.mp4";
 import mapedicure from "../video/mapedicure.mp4";
 
 function Projects({ english }) {
@@ -15,31 +15,35 @@ function Projects({ english }) {
 
       <Project
         english={english}
-        title={"Amazon Clone Project"}
-        text={english ? "Fully functional E-commerce site including an authentication and payment system. Adapted to all screens." : "Site E-commerce complètement fonctionnel comprenant un système d'authentification et de paiement. Adapté à tous les écrans."}
-        demoURL={"https://amazon-clone-project-donovan.vercel.app/"}
-        sourceURL={"https://github.com/donovan-herion/amazon-clone-project"}
-        video={amazon}
+        title={"City2 Shopping Center"}
+        text={
+          english
+            ? "With more than 100 shops in the heart of the city, City 2 is THE place to be for your shopping spree in Brussels... Adapted to all screens. Elementor website."
+            : "Avec plus de 100 enseignes réunies au cœur de la ville, City 2, c'est LE point de rendez-vous idéal pour vos virées shopping à Bruxelles... Adapté à tous les écrans. Site web développé sur mesure avec Elementor"
+        }
+        demoURL={"https://city2.be"}
+        sourceURL={null}
+        video={city2}
       />
       <Project
         english={english}
-        title={"Airbnb Clone Project"}
+        title={"Nocturne Agency"}
         text={
           english
-            ? "Simplified reproduction of the airbnb site. Possibility to simulate the search for a property via the search bar. Adapted to all screens."
-            : "Reproduction simplifiée du site d'airbnb. Possibilité de simuler la recherche d'un bien via la barre de recherche. Adapté à tous les écrans."
+            ? "Nocturne Agency creates the visual content necessary for the company to digitally show its positioning, its promise and its activities... Adapted to all screens. Website using NextJS"
+            : "Nocturne Agency est une agence de communication spécialisée dans la création et la publication de contenu pour tout type d'entreprise... Adapté à tous les écrans. Site web réalisé sur mesure avec NextJS"
         }
-        demoURL={"https://airbnb-clone-project-donovan.vercel.app/"}
-        sourceURL={"https://github.com/donovan-herion/airbnb-clone-project"}
-        video={airbnb}
+        demoURL={"https://nocturne-agency.com"}
+        sourceURL={null}
+        video={nocturne}
       />
       <Project
         english={english}
         title={"Ma Pedicure"}
         text={
           english
-            ? "Showcase site of an independent pedicure. Fully customizable by the client. Possibility to change the text of the different sections, to add different prices... Adapted to all screens."
-            : "Site vitrine d'une pédicure indépendante. Entièrement personnalisable par le client. Possibilité de changer le texte des différentes sections, d'ajouter différents tarifs... Adapté à tous les écrans."
+            ? "Showcase site of an independent pedicure. Fully customizable by the client. Possibility to change the text of the different sections, to add different prices... Adapted to all screens. Website using Wordpress and ACF"
+            : "Site vitrine d'une pédicure indépendante. Entièrement personnalisable par le client. Possibilité de changer le texte des différentes sections, d'ajouter différents tarifs... Adapté à tous les écrans. Site web réalisé avec Wordpress et ACF"
         }
         demoURL={"https://mapedicure.com"}
         sourceURL={null}
